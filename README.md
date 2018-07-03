@@ -82,7 +82,28 @@ brew pin <package> && brew unpin <package>
 ### Homebrew Cask
 搜索 如果你想查看 cask 上是否存在你需要的 app，可以到 [Homebrew Cask](caskroom.io) 进行搜索
 
+```bash
+brew cask instll < package >
+```
 |package|summary|
 |:-----:|:-----:|
-|alfred|Alfred is an award-winning app for Mac OS X which boosts your efficiency with hotkeys, keywords, text expansion and more. Search your Mac and the web, and be more productive with custom actions to control your Mac.|
+|alfred|搜索神器|
+|iterm2|命令行工具|
+|qq|鹅厂通讯工具|
+|qqmusic|鹅厂音乐|
+|wechat|鹅厂微信|
+|suspicious-package|快速查看包安装内容|
+|betterzip|压缩包快速查看工具|
+|qlcolorcode|代码预览工具|
+|visual-studio-code|微软轻量代码编辑器|
+|cheatsheet|长按commod快捷键预览|
+|qlimagesize|快速查看图片大小|
+|quicklook-csv|excel快速查看|
+|webpquicklook|文件快速预览|
+|firefox|火狐浏览器|
+|qlprettypatch|文件路径查看|
+|quicklook-json|json快速预览|
+|google-chrome|chrome|
+|qlstephen|各类文件快速预览|
+|sourcetree|git图形话管理工具|
 
