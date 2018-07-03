@@ -105,4 +105,4 @@ brew cask instll < package >
 |quicklook-json|json快速预览|
 |google-chrome|chrome|
 |qlstephen|各类文件快速预览|
-|sourcetree|git图形话管理工具|
+|sourcetree|git图形界面管理工具|
