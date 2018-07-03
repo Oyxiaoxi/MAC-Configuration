@@ -52,12 +52,16 @@ cd download && git clone https://github.com/dracula/iterm.git
 3、Select Import... from the list
 4、Select the Dracula.itermcolors file
 5、Select the Dracula from Color Presets...
+
+# Homebrew 禁止每次安装应用前更新
+export HOMEBREW_NO_AUTO_UPDATE=true
 ```
 
 ### Homebrew Usage
 ```bash
 # 更新所有，清除，通知完成任务
 brew update && brew upgrade && brew cleanup ; say mission complete
+brew update && brew upgrade brew-cask && brew cleanup ; say mission complete
 
 # 查看哪些包能更新
 brew outdated
@@ -74,4 +78,11 @@ brew cleanup -n
 # 锁定不想更新的包
 brew pin <package> && brew unpin <package>
 ```
+
+### Homebrew Cask
+搜索 如果你想查看 cask 上是否存在你需要的 app，可以到 [Homebrew Cask](caskroom.io) 进行搜索
+
+|package|summary|
+|:-----:|:-----:|
+|alfred|Alfred is an award-winning app for Mac OS X which boosts your efficiency with hotkeys, keywords, text expansion and more. Search your Mac and the web, and be more productive with custom actions to control your Mac.|
 
