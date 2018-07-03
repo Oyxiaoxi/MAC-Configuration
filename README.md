@@ -11,8 +11,50 @@
 
 > ### install
 > * 在安装 **Homebrew** 之前，需要将 **Xcode Command Line Tools** 安装完成，这样你就可以使用基于 Xcode Command Line Tools 编译的 **Homebrew**。
+>   > homebrew 安装较慢，也有可能会出现，需要耐心
 
 ```bash
+# install
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# test
+which brew & brew doctor
 ```
->   > homebrew 安装较慢，也有可能会出现，需要耐心
+
+## brew install iterm2
+```bash
+# install iterm2
+brew cask install iterm2
+
+# zsh --version
+brew install zsh zsh-completions
+
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# zsh theme
+sudo vim ~/.zshrc
+
+# 修改 ZSH_THEME的值 这里改为cloud主题；
+ZSH_THEME="cloud"
+
+# :wq 保存退出后
+source ~/.zshrc
+
+# git zsh-autosuggestions
+sudo git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# downolad Dracula theme for iterm2
+cd download & git clone https://github.com/dracula/iterm.git
+1、iTerm2 > Preferences > Profiles > Colors Tab
+2、Open the Color Presets... drop-down in the bottom right corner
+3、Select Import... from the list
+4、Select the Dracula.itermcolors file
+5、Select the Dracula from Color Presets...
+```
+
+
+### Homebrew Usage
+```bash
+
+```
