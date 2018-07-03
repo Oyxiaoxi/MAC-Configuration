@@ -106,4 +106,3 @@ brew cask instll < package >
 |google-chrome|chrome|
 |qlstephen|各类文件快速预览|
 |sourcetree|git图形话管理工具|
-
