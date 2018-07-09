@@ -106,3 +106,67 @@ brew cask instll < package >
 |google-chrome|chrome|
 |qlstephen|各类文件快速预览|
 |sourcetree|git图形界面管理工具|
+|archey|mac概览|
+
+### Development
+
+#### mysql
+因为使用的数据库结构版本较低，故只能使用 <= 8.0 以上的数据库版本
+
+```zsh
+brew install mysql@5.7
+
+# MySql 加入系统变量
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
+# 配置生效
+source ~/.zshrc
+
+# mysql.sock
+cd /var && sudo mkdir mysql
+sudo ln -s /tmp/mysql.sock /var/mysql/mysql.sock
+
+# mysql root 密码设置
+mysql_secure_installation 
+
+# start & stop & restart 
+mysql.server start 
+mysql.server stop
+mysql.server restart
+
+# 锁定包
+brew pin mysql@5.7
+```
+
+#### Composer
+php 包管理工具
+```zsh
+brew install composer
+
+# 加入系统变量
+export PATH="/usr/bin/:$PATH:$HOME/.composer/vendor/bin/:$PATH"  # Composer
+```
+
+#### Flutter
+Google’s mobile app SDK
+```zsh
+cd ~ && git clone -b beta https://github.com/flutter/flutter.git
+
+# Flutter 环境变量
+export PATH=$HOME/flutter/bin:$PATH
+
+# Flutter CN  国内镜像
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+
+# 配置生效
+source ~/.zshrc 
+
+# 查看依赖项
+flutter doctor
+
+# 根据依赖项目安装 
+brew install --HEAD libimobiledevice
+brew install ideviceinstaller ios-deploy cocoapods
+pod setup
+```
