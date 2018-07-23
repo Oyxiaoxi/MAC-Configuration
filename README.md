@@ -170,3 +170,98 @@ brew install --HEAD libimobiledevice
 brew install ideviceinstaller ios-deploy cocoapods
 pod setup
 ```
+
+#### Laravel
+[百度网盘](https://pan.baidu.com/s/1slWENqH#list/path=%2F)
+
+install VirtualBox, Vagrant
+
+```bash
+# Homestead Box 
+[Homestead 虚拟机盒子](http://download.fsdhub.com/lc-homestead-6.1.0-2018061700.zip)
+
+# 解压 lc-homestead ，切换其解压目录下
+vagrant box add metadata.json  # Homestead Vagrant 导入
+
+# 下载 Homestead
+cd ~ && git clone https://git.coding.net/summerblue/homestead.git Homestead
+cd ~/Homestead && git checkout v7.8.0
+
+# 初始化
+bash init.sh
+```
+
+##### 配置文件 
+code ~/Homestead/Homestead.yaml
+
+1. 虚拟机设置
+ip: "192.168.10.10"
+memory: 2048
+cpus: 1
+provider: virtualbox
+
+2. SSH 秘钥登录配置
+> authorize 选项是指派登录虚拟机授权连接的公钥文件，此文件填写的是主机上的公钥文件地址，虚拟机初始化时，此文件里的内容会被复制存储到虚拟机的 /home/vagrant/.ssh/authorized_keys文件中，从而实现 SSH 免密码登录。
+
+authorize: ~/.ssh/id_rsa.pub
+
+##### 此处我们将公钥和私钥一起同步到虚拟机中：
+keys:
+    - ~/.ssh/id_rsa
+    - ~/.ssh/id_rsa.pub
+
+##### 检查主机上是否已经生成过 SSH Key
+ls -al ~/.ssh
+
+##### 3. 共享文件夹配置
+folders:
+    - map: ~/Code
+      to: /home/vagrant/Code
+```bash
+cd ~
+mkdir Code
+# Homestead 会把该文件夹下的项目自动映射到虚拟机的 /home/vagrant/Code 文件夹上。
+```
+
+##### 4. 站点配置
+sites:
+    - map: homestead.test
+      to: /home/vagrant/Code/Laravel/public
+
+```bash
+code /etc/hosts
+# hosts 最后一行加入
+192.168.10.10  homestead.test
+# 保存之后 
+source /etc/hosts
+```
+
+##### 5.数据库配置
+databases:
+    - homestead
+    - 每次增加数据库在这里
+
+##### 6.自定义变量
+variables:
+    - key: APP_ENV
+      value: local
+
+##### Vagrant
+|命令行|说明|
+|:-----:|:-----:|
+|vagrant init|初始化 vagrant|
+|vagrant up|启动 vagrant|
+|vagrant halt|关闭 vagrant|
+|vagrant ssh|通过 SSH 登录 vagrant（需要先启动 vagrant）|
+|vagrant provision|重新应用更改 vagrant 配置|
+|vagrant destroy|删除 vagrant|
+|vagrant reload |重新加载|
+
+```bash
+cd ~/Homestead && vagrant up
+vagrant ssh
+vagrant halt
+
+# 重新加载
+cd ~/Homestead && vagrant provision && vagrant reload 
+```
