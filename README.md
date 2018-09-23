@@ -278,12 +278,12 @@ composer config repo.packagist composer https://packagist.laravel-china.org
 
 下载 [Homestead 虚拟机盒子](http://download.fsdhub.com/lc-homestead-6.1.1-2018090400.zip)
 
-下载后的文件为 `{{homestead_box_folder}}.zip`，请对其进行 zip 解压操作，解压成功后可以看到目录 `{{homestead_box_folder}}`，此目录下包含两个文件：
+下载后的文件为 `lc-homestead-6.1.1-2018090400.zip`，请对其进行 zip 解压操作，解压成功后可以看到目录 `lc-homestead-6.1.1-2018090400`，此目录下包含两个文件：
 
 - virtualbox.box（教程定制化过的 Homestead 盒子）
 - metadata.json（盒子的导入配置文件）
 
-在解压目录中 `{{homestead_box_folder}}` 运行以下命令导入 Box：
+在解压目录中 `lc-homestead-6.1.1-2018090400` 运行以下命令导入 Box：
 
 ```bash
 > vagrant box add metadata.json
