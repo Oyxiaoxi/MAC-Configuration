@@ -244,6 +244,36 @@ variables:
     - key: APP_ENV
       value: local
 ```
+##### Vagrant
+|命令行|说明|
+|:-----:|:-----:|
+|vagrant init|初始化 vagrant|
+|vagrant up|启动 vagrant|
+|vagrant halt|关闭 vagrant|
+|vagrant ssh|通过 SSH 登录 vagrant（需要先启动 vagrant）|
+|vagrant provision|重新应用更改 vagrant 配置|
+|vagrant destroy|删除 vagrant|
+|vagrant reload |重新加载|
+|vagrant box list|盒子列表|
+|vagrant box add metadata.json|填加盒子|
+|vagrant box remove laravel/homestead|移除盒子|
+
+```bash
+cd ~/Homestead && vagrant up
+vagrant ssh
+vagrant halt
+
+# 多版本 vagrant 盒子切换 
+~/Homestead/scripts/homestead.rb # 找到这个目录
+
+# Configure The Box
+# config.vm.box = settings["box"] ||= "laravel/homestead"
+config.vm.box = settings["box"] ||= "lc/homestead"
+# 千万要注意 做好 database seeds。要不然升级盒子，要重新安装 Laravel 项目
+
+# 重新加载
+cd ~/Homestead && vagrant provision && vagrant reload 
+```
 
 ##### Homestead
 > Homestead 利用 Vagrantfile 提供的便利，定制了一整套的可配置、可移植和复用的 Laravel 开发环境。Homestead 虚拟机里面包含了 Nginx Web 服务器、PHP 7、MySQL、Postgres、Redis、Memcached、Node，以及所有你在使用 Laravel 开发时需要用到的各种软件。  
@@ -304,35 +334,3 @@ composer config repo.packagist composer https://packagist.laravel-china.org
 > cd ~
 > git clone https://git.coding.net/summerblue/homestead.git Homestead
 ```
-
-##### Vagrant
-|命令行|说明|
-|:-----:|:-----:|
-|vagrant init|初始化 vagrant|
-|vagrant up|启动 vagrant|
-|vagrant halt|关闭 vagrant|
-|vagrant ssh|通过 SSH 登录 vagrant（需要先启动 vagrant）|
-|vagrant provision|重新应用更改 vagrant 配置|
-|vagrant destroy|删除 vagrant|
-|vagrant reload |重新加载|
-|vagrant box list|盒子列表|
-|vagrant box add metadata.json|填加盒子|
-|vagrant box remove laravel/homestead|移除盒子|
-
-```bash
-cd ~/Homestead && vagrant up
-vagrant ssh
-vagrant halt
-
-# 多版本 vagrant 盒子切换 
-~/Homestead/scripts/homestead.rb # 找到这个目录
-
-# Configure The Box
-# config.vm.box = settings["box"] ||= "laravel/homestead"
-config.vm.box = settings["box"] ||= "lc/homestead"
-# 千万要注意 做好 database seeds。要不然升级盒子，要重新安装 Laravel 项目
-
-# 重新加载
-cd ~/Homestead && vagrant provision && vagrant reload 
-```
-
