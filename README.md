@@ -246,7 +246,7 @@ variables:
 ```
 ##### Vagrant
 |命令行|说明|
-|:-----|:-----:|
+|:-----|:-----|
 |vagrant init|初始化 vagrant|
 |vagrant up|启动 vagrant|
 |vagrant halt|关闭 vagrant|
