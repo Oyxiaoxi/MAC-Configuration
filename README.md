@@ -321,7 +321,7 @@ composer config repo.packagist composer https://packagist.laravel-china.org
 
 > 注意：请必须解压到 **非中文路径**，有同学反馈中文路径会出现不可预知问题。
 
-### 3. 下载 Homestead 管理脚本
+##### 下载 Homestead 管理脚本
 
 因国内网络限制，为方便下载和后续管理脚本的流畅使用，本书中将使用定制版本的 Homestead 脚本，定制版有以下优势：
 
