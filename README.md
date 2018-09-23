@@ -334,3 +334,19 @@ composer config repo.packagist composer https://packagist.laravel-china.org
 > cd ~
 > git clone https://git.coding.net/summerblue/homestead.git Homestead
 ```
+
+#### Elasticsearch
+```bash 
+# 开启
+sudo systemctl restart elasticsearch.service
+
+# Elasticsearch 启动需要时间，稍等大概 10s ~ 一分钟以后，使用以下命令检测是否启动成功：
+# 查看进程 ps aux|grep elastic
+curl http://127.0.0.1:9200/
+
+# 关机
+sudo systemctl disable elasticsearch.service
+
+# 中文分词插件
+sudo /usr/share/elasticsearch/bin/elasticsearch-plugin list
+```
