@@ -276,7 +276,7 @@ composer config -g repo.packagist composer https://packagist.laravel-china.org
 composer config repo.packagist composer https://packagist.laravel-china.org
 ```
 
-下载 [Homestead 虚拟机盒子](http://download.fsdhub.com/{{homestead_box_folder}}.zip)
+下载 [Homestead 虚拟机盒子](http://download.fsdhub.com/lc-homestead-6.1.1-2018090400.zip)
 
 下载后的文件为 `{{homestead_box_folder}}.zip`，请对其进行 zip 解压操作，解压成功后可以看到目录 `{{homestead_box_folder}}`，此目录下包含两个文件：
 
