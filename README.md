@@ -245,6 +245,66 @@ variables:
       value: local
 ```
 
+##### Homestead
+> Homestead 利用 Vagrantfile 提供的便利，定制了一整套的可配置、可移植和复用的 Laravel 开发环境。Homestead 虚拟机里面包含了 Nginx Web 服务器、PHP 7、MySQL、Postgres、Redis、Memcached、Node，以及所有你在使用 Laravel 开发时需要用到的各种软件。  
+
++ Homestead 管理脚本;
++ Homestead Box 虚拟机盒子;
+
+##### Homestead 管理脚本
+> Homestead 脚本使用 Ruby 和 Shell 脚本编写而成。原理是对 Vagrantfile 文件做定制。将从 ~/Homestead/Homestead.yaml 读取的配置信息，在 provision 时，解析为 Vagrant 命令并进行对虚拟机的配置。Homestead 脚本的作用在于，提供了极其简单易用的接口，使我们只需要通过傻瓜化配置，即可完成复杂的任务。
+
++ IP 配置，端口映射；  
++ Nginx Site 创建；  
++ 数据库创建；  
++ 主机文件夹挂载到虚拟机等任务。
+
+##### 安装和使用 Homestead
++ 下载和导入 Homestead Box 虚拟机盒子；  
++ 安装 Git ，为下载 Homestead 管理脚本做准备；  
++ 使用 Git 下载 Homestead 管理脚本；
+
+- Composer 加速，配置了 [Composer 中国全量镜像](https://laravel-china.org/composer) 支持；
+- 默认集成 Heroku 工具；
+- 默认集成 Yarn，并为 Yarn 加了淘宝镜像的加速；
+- 使用 CNPM 对 NPM 进行加速。
+
+```bash
+# 全局 Composer 加速
+composer config -g repo.packagist composer https://packagist.laravel-china.org
+# 当前项目 Composer 加速
+composer config repo.packagist composer https://packagist.laravel-china.org
+```
+
+下载 [Homestead 虚拟机盒子](http://download.fsdhub.com/{{homestead_box_folder}}.zip)
+
+下载后的文件为 `{{homestead_box_folder}}.zip`，请对其进行 zip 解压操作，解压成功后可以看到目录 `{{homestead_box_folder}}`，此目录下包含两个文件：
+
+- virtualbox.box（教程定制化过的 Homestead 盒子）
+- metadata.json（盒子的导入配置文件）
+
+在解压目录中 `{{homestead_box_folder}}` 运行以下命令导入 Box：
+
+```bash
+> vagrant box add metadata.json
+```
+
+> 注意：请必须解压到 **非中文路径**，有同学反馈中文路径会出现不可预知问题。
+
+### 3. 下载 Homestead 管理脚本
+
+因国内网络限制，为方便下载和后续管理脚本的流畅使用，本书中将使用定制版本的 Homestead 脚本，定制版有以下优势：
+
+- 从国内 coding.net 网站下载，下载速度会比 [官方](https://github.com/laravel/homestead) 更快；
+- 对脚本进行修改，移除了每一次 `provision` 时 `composer self-update` 的卡顿。
+
+接下来，使用 Git 下载定制版的 Homestead：
+
+```bash
+> cd ~
+> git clone https://git.coding.net/summerblue/homestead.git Homestead
+```
+
 ##### Vagrant
 |命令行|说明|
 |:-----:|:-----:|
@@ -255,12 +315,24 @@ variables:
 |vagrant provision|重新应用更改 vagrant 配置|
 |vagrant destroy|删除 vagrant|
 |vagrant reload |重新加载|
+|vagrant box list|盒子列表|
+|vagrant box add metadata.json|填加盒子|
+|vagrant box remove laravel/homestead|移除盒子|
 
 ```bash
 cd ~/Homestead && vagrant up
 vagrant ssh
 vagrant halt
 
+# 多版本 vagrant 盒子切换 
+~/Homestead/scripts/homestead.rb # 找到这个目录
+
+# Configure The Box
+# config.vm.box = settings["box"] ||= "laravel/homestead"
+config.vm.box = settings["box"] ||= "lc/homestead"
+# 千万要注意 做好 database seeds。要不然升级盒子，要重新安装 Laravel 项目
+
 # 重新加载
 cd ~/Homestead && vagrant provision && vagrant reload 
 ```
+
