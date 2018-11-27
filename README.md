@@ -107,6 +107,7 @@ brew cask instll < package >
 |qlstephen|各类文件快速预览|
 |sourcetree|git图形界面管理工具|
 |archey|mac概览|
+|typora|md|
 
 ### Development
 
