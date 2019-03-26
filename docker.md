@@ -55,7 +55,7 @@ cp env-example .env
 cd laradock/nginx/sites/
 ```
 
-![](/Volumes/WorkDate/Project/git/Configuration/images/nginx-sites.png)
+![](https://github.com/Oyxiaoxi/MAC-Configuration/blob/master/images/nginx-sites.png)
 
 
 
@@ -240,7 +240,7 @@ docker-compose logs
 - laravel-scheduler.conf.example —— 计划任务的配置示例文件；
 - laravel-worker.conf.example —— 队列 worker 的示例配置文件。
 
-![](/Volumes/WorkDate/Project/git/Configuration/images/supervisord.png)
+![](https://github.com/Oyxiaoxi/MAC-Configuration/blob/master/images/supervisord.png)
 
 查看一下 [文档](https://laradock.io/documentation/#run-laravel-scheduler)，在生产环境你不想启动 workspace 容器，那么可以使用 Supervisor 来配置 Cron，复制 `laravel-scheduler.conf.example` 配置文件就可以了。
 
