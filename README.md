@@ -11,7 +11,7 @@
 
 > ### install
 > * 在安装 **Homebrew** 之前，需要将 **Xcode Command Line Tools** 安装完成，这样你就可以使用基于 Xcode Command Line Tools 编译的 **Homebrew**。
->   > homebrew 安装较慢，也有可能会出现问题，需要耐心
+> homebrew 安装较慢，也有可能会出现问题，需要耐心
 
 ```bash
 # install
