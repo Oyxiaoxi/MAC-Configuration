@@ -169,6 +169,10 @@ flutter doctor
 # 根据依赖项目安装 
 brew install --HEAD libimobiledevice
 brew install ideviceinstaller ios-deploy cocoapods
+
+# 安装 cocoapods 慢
+https://blog.csdn.net/qq_42283150/article/details/93179665
+
 pod setup
 ```
 
