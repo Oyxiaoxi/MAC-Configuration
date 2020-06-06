@@ -80,7 +80,7 @@ brew pin <package> && brew unpin <package>
 ```
 
 ### Homebrew Cask
-搜索 如果你想查看 cask 上是否存在你需要的 app，可以到 [Homebrew Cask](caskroom.io) 进行搜索
+搜索 如果你想查看 cask 上是否存在你需要的 app，可以到 [Homebrew Cask](https://formulae.brew.sh/cask/) 进行搜索
 
 ```bash
 brew cask instll < package >
