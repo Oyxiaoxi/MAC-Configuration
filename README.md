@@ -153,7 +153,7 @@ FLUSH PRIVILEGES;
 
 
 
-#### # Sequel Pro 登陆后，读表 Loading 状态
+#### Sequel Pro 登陆后，读表 Loading 状态
 
 [Sequel Pro 测试版本](https://sequelpro.com/test-builds)
 
