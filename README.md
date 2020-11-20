@@ -130,7 +130,7 @@ sudo ln -s /tmp/mysql.sock /var/mysql/mysql.sock
 mysql_secure_installation 
 
 # mysql 8.0 连接 Sequel Pro 出错
-> 由 mysql_native_password 改为了 caching_sha2_password,解决问题方法就是修改配置把验证规则再改回来
+由 mysql_native_password 改为了 caching_sha2_password,解决问题方法就是修改配置把验证规则再改回来
 
 use mysql;
 select user,plugin from user;
@@ -149,12 +149,18 @@ SHOW VARIABLES LIKE 'validate_password%';
 
 # 刷新
 FLUSH PRIVILEGES;
-
-# Sequel Pro 登陆后，读表 Loading 状态
-[Sequel Pro 测试版本](https://sequelpro.com/test-builds)
 ```
 
+
+
+#### # Sequel Pro 登陆后，读表 Loading 状态
+
+[Sequel Pro 测试版本](https://sequelpro.com/test-builds)
+
+
+
 #### Composer
+
 php 包管理工具
 ```zsh
 brew install composer
